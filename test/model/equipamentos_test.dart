@@ -3,7 +3,6 @@ import 'package:model_dart/model/equipamentos.dart';
 
 void main() {
   group('Testes da classe Equipamentos', () {
-    // Dados mockados simulando o retorno da API
     final Map<String, dynamic> jsonMock = {
       "nome": "Notebook Dell",
       "patrimonio": "PAT-001",
@@ -13,13 +12,13 @@ void main() {
     };
 
     test('Deve instanciar a classe e mapear todos os campos corretamente a partir do JSON (fromJson)', () {
-      // Act
+      // act
       final equipamento = Equipamentos.fromJson(jsonMock);
 
-      // Assert - Testar o tipo do objeto
+      // testar o tipo do objeto
       expect(equipamento, isA<Equipamentos>());
 
-      // Assert - Validar todos os campos do objeto
+      // validar todos os campos do objeto
       expect(equipamento.nome, equals("Notebook Dell"));
       expect(equipamento.patrimonio, equals("PAT-001"));
       expect(equipamento.categoria, equals("Informática"));
@@ -28,7 +27,7 @@ void main() {
     });
 
     test('Deve converter o objeto Equipamentos de volta para Map/JSON corretamente (toJson)', () {
-      // Arrange
+      // arrange
       final equipamento = Equipamentos(
         nome: "Notebook Dell",
         patrimonio: "PAT-001",
@@ -37,10 +36,10 @@ void main() {
         modelo: "Inspiron 15",
       );
 
-      // Act
+      // act
       final jsonResultante = equipamento.toJson();
 
-      // Assert
+      // assert
       expect(jsonResultante, equals(jsonMock));
     });
   });

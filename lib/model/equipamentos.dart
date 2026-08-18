@@ -13,7 +13,6 @@ class Equipamentos {
     required this.modelo,
   });
 
-  // Converte o JSON (Map) recebido da API para uma instância do Model
   factory Equipamentos.fromJson(Map<String, dynamic> json) {
     return Equipamentos(
       nome: json['nome'] as String,
@@ -24,7 +23,6 @@ class Equipamentos {
     );
   }
 
-  // Converte o objeto Equipamentos novamente para um Map (JSON)
   Map<String, dynamic> toJson() {
     return {
       'nome': nome,
